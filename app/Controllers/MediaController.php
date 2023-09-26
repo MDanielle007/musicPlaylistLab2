@@ -83,7 +83,7 @@ class MediaController extends BaseController
         if ($id !== null) {
             $builder->where('playlist.playlist_id', $id);
         }
-
+ 
         $query = $builder->get();
 
         $data = [
@@ -100,3 +100,4 @@ class MediaController extends BaseController
         return view('MusicPlaylist\index', $data);
     }
 }
+

@@ -6,7 +6,6 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 $routes->get('/', 'MediaController::index');
-$routes->get('/trylangs', 'MediaController::trylangs');
 $routes->get('addSong', 'MediaController::AddSongForm');
 $routes->get('/uploadSongs', 'SongUploadController::index');
 $routes->get('/searchSong', 'MediaController::searchSong');

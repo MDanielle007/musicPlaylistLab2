@@ -8,7 +8,9 @@
             <div class="modal-body">
                 <?php foreach($playlists as $playlist):?>
                     <br>
-                        <a href="/playlist/<?=$playlist['playlist_id']?>"><?=$playlist['PlaylistName']?></a>
+                        <a href="/playlist/<?=$playlist['playlist_id']?>">
+                            <?=$playlist['PlaylistName']?>
+                        </a>
                     <br>
                 <?php endforeach;?>
 

@@ -35,7 +35,7 @@
                 const track = playlistItems[trackIndex];
                 const trackSrc = track.getAttribute('data-src');
                 audio.src = trackSrc;
-                audio.play();
+                // audio.play();
                 currentTrack = trackIndex;
             }
         }

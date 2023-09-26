@@ -16,13 +16,6 @@
                 <label class="input-group-text" for="inputGroupFile02">Upload Song</label>
             </div>
 
-            <!-- Display validation errors if they exist -->
-            <?php if (isset($validation)): ?>
-                <div class="alert alert-danger">
-                    <?= $validation->listErrors() ?>
-                </div>
-            <?php endif; ?>
-
             <button type="submit" class="btn btn-primary">Submit</button>
             <a href="/" class="btn btn-primary">Back</a>
         </form>

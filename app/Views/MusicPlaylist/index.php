@@ -9,19 +9,20 @@
     </form>
     
     <h1>Music Player</h1>
-    <a class="btn btn-primary" href="/">All Songs</a>
+    <a href="/" class="btn btn-primary">All Songs</a>
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         My Playlist
     </button>
 
     <a href="/addSong/" class="btn btn-primary">Add Song</a>
 
-    <audio id="audio" controls autoplay></audio>
+    <audio id="audio" controls></audio>
     <ul id="playlist">
         <?php foreach($songs as $song):?>
             <li data-src="<?=base_url('/uploads/songs/'.$song['SongFileAddress']);?>">
                 <?=$song['SongName']?>
-                <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" data-bs-target="#myModal"
+                <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" 
+                    data-bs-target="#myModal"
                     onclick="setMusicID('<?=$song['id']?>')">
                     +
                 </button>
