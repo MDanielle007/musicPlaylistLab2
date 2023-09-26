@@ -8,7 +8,7 @@ class PlaylistTracksModel extends Model
 {
     protected $DBGroup          = 'default';
     protected $table            = 'playlist_track';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'playlist_track_id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

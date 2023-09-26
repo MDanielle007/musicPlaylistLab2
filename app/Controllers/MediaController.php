@@ -76,14 +76,14 @@ class MediaController extends BaseController
         $db = \Config\Database::connect();
         $builder = $db->table('songs');
 
-        $builder->select(['songs.id', 'songs.SongName', 'songs.SongFileAddress', 'playlist.PlaylistName','playlist.playlist_id']);
+        $builder->select(['songs.id', 'songs.SongName', 'songs.SongFileAddress', 'playlist.PlaylistName','playlist.playlist_id','playlist_track.playlist_track_id']);
         $builder->join('playlist_track', 'songs.id = playlist_track.song_id');
         $builder->join('playlist', 'playlist_track.playlist_id = playlist.playlist_id');
 
         if ($id !== null) {
             $builder->where('playlist.playlist_id', $id);
         }
- 
+
         $query = $builder->get();
 
         $data = [
@@ -98,6 +98,13 @@ class MediaController extends BaseController
         }
         
         return view('MusicPlaylist\index', $data);
+    }
+
+    public function deleteFromPlaylist($id = null){
+
+        $this->playlistTracks->where('playlist_track_id',$id)->delete();
+
+        return redirect()->to('/');
     }
 }
 

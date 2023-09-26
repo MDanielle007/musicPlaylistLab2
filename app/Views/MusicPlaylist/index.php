@@ -21,11 +21,14 @@
         <?php foreach($songs as $song):?>
             <li data-src="<?=base_url('/uploads/songs/'.$song['SongFileAddress']);?>">
                 <?=$song['SongName']?>
-                <button type="button" class="btn btn-primary mx-2" data-bs-toggle="modal" 
+                <button type="button" class="btn btn-primary mx-1" data-bs-toggle="modal" 
                     data-bs-target="#myModal"
                     onclick="setMusicID('<?=$song['id']?>')">
                     +
                 </button>
+                <?php if(!empty($song['playlist_track_id'])):?>
+                    <a href="/deleteFromPlaylist/<?=$song['playlist_track_id']?>" class="btn btn-danger">-</a>
+                <?php endif;?>
             </li>
         <?php endforeach; ?>
     </ul>
